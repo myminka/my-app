@@ -16,11 +16,11 @@ const App : React.FC = () => {
     }
   }
 
-  const addTask = () => {
+  const addTask = ():void => {
     const newTask = {
       taskName:task,
       deadLine:deadLine
-    }
+    };
 
     setTodo([...todo, newTask]);
     setTask('');
@@ -37,8 +37,8 @@ const App : React.FC = () => {
       <div className='App'>
         <div className='header'>
           <div className='inputContainer'>
-            <input type='text' name='task' placeholder='Add a task' onChange={handleChange}/>
-            <input type='number' name='deadLine' placeholder='Set a deadline(in days)' onChange={handleChange}/>
+            <input type='text' name='task' placeholder='Add a task' onChange={handleChange} value={task}/>
+            <input type='number' name='deadLine' placeholder='Set a deadline(in days)' onChange={handleChange} value={deadLine}/>
           </div>
           <button onClick={addTask}>Add</button>
         </div>
